@@ -1,17 +1,17 @@
 from typing import List, Optional
 from datetime import datetime
-from app.models.cuenta import Cuenta, Operacion
+from app.models.cuenta import CuentaUsuario, Operacion
 
 
 class BilleteraService:
     def __init__(self):
         self.cuentas = [
-            Cuenta(numero="21345", nombre="Arnaldo", saldo=200, contactos=["123", "456"]),
-            Cuenta(numero="123", nombre="Luisa", saldo=400, contactos=["456"]),
-            Cuenta(numero="456", nombre="Andrea", saldo=300, contactos=["21345"])
+            CuentaUsuario(numero="21345", nombre="Arnaldo", saldo=200, contactos=["123", "456"]),
+            CuentaUsuario(numero="123", nombre="Luisa", saldo=400, contactos=["456"]),
+            CuentaUsuario(numero="456", nombre="Andrea", saldo=300, contactos=["21345"])
         ]
 
-    def obtener_contactos(self, numero: str) -> List[Cuenta]:
+    def obtener_contactos(self, numero: str) -> List[CuentaUsuario]:
         cuenta = self._obtener_cuenta(numero)
         if not cuenta:
             return []
@@ -43,10 +43,10 @@ class BilleteraService:
 
         return True
 
-    def obtener_historial(self, numero: str) -> Optional[Cuenta]:
+    def obtener_historial(self, numero: str) -> Optional[CuentaUsuario]:
         return self._obtener_cuenta(numero)
 
-    def _obtener_cuenta(self, numero: str) -> Optional[Cuenta]:
+    def _obtener_cuenta(self, numero: str) -> Optional[CuentaUsuario]:
         for cuenta in self.cuentas:
             if cuenta.numero == numero:
                 return cuenta

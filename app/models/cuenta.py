@@ -10,7 +10,7 @@ class Operacion(BaseModel):
     fecha: datetime
 
 
-class Cuenta(BaseModel):
+class CuentaUsuario(BaseModel):
     numero: str
     nombre: str
     saldo: float
