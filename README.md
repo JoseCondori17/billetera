@@ -1,6 +1,10 @@
 
 # Examen final - Billetera
 
+Integrantes:
+- Cecilia Natali Pilco Padilla
+- Jose Eduardo Condori Palomino
+
 La evaluacion cuenta con la implementacion de la API con FastAPI se ha estructurado la carpeta en:
 
 - api
